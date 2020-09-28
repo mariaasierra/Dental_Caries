@@ -1,10 +1,7 @@
 #picrust analysis
-library(microbiome)
 library(ggplot2)
-library(ALDEx2)
 library("readxl")
 library("magrittr")
-library(tidyverse)
 #import abundance table
 data<- read_xlsx("pathway.xlsx")
 head(data)
