@@ -1,1 +1,1 @@
-16S Illumina reads processed with QIIME2
+16S rRNA Illumina reads processed with QIIME2
