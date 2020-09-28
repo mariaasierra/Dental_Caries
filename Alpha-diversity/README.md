@@ -3,4 +3,4 @@ Diversity and richness analysis for Dental Caries SDF treatment microbiomes. Sam
 
 Files are available on the [Data](https://github.com/mariaasierra/Dental_Caries/tree/master/Data) folder.
 
-![Alpha](https://github.com/mariaasierra/Dental_Caries/blob/master/Figures/alpha-diversity.pdf)**Alpha-diversity.**
+![Alpha](https://github.com/mariaasierra/Dental_Caries/blob/master/Figures/alpha-diversity.jpg)**Alpha-diversity.**
