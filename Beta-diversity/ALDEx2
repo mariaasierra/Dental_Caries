@@ -1,0 +1,16 @@
+#ALDEx2 comparisons by treatment
+
+#Plaque Infected
+OTU.UF = as.matrix(otu_table(plq_inf_phylo, taxa_are_rows=F))
+tax= as.matrix(tax_table(plq_inf_phylo@tax_table@.Data))
+gg.otus <- t(OTU.UF) #Transpose OTU
+ann<- read.table("../Data/annotations.txt", header = T)
+col_order <- row.names(ann)
+OTU.UF.ord <- gg.otus[, col_order] #Reorder columns
+sample_data(plq_inf_phylo)
+
+conds <- c(rep("caries-active", 5), rep("caries-free", 5), rep("non-responders", 5),
+                 rep("SDF",5)) #Treatment are the conditions to compare
+x<- aldex.clr(OTU.UF.ord, conds, denom = "all")#clr: centred log-ratio transformation
+x.al <- aldex.kw(x)#test glm: general linear model and Kruskal Wallace
+OTU.aldex = x.al[which(x.al$kw.ep < 0.06),] #OTUs with p<0.05  #glm ANOVA
