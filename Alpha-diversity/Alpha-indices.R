@@ -16,16 +16,16 @@ OTUs=t(OTUs)
 colnames(OTUs) <- OTUs[1,]
 OTUs <- OTUs[-1, ] 
 class(OTUs) <- "numeric"
-TAX=read.table("taxonomy.tsv", header = T,sep="\t")
+TAX=read.table("../Data/taxonomy.tsv", header = T,sep="\t")
 row.names(TAX) = TAX$Feature.ID
 TAX=TAX[,-1]
 tax.clean = separate(TAX, Taxon, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep=";")
 tax.clean = tax.clean[,-which(names(tax.clean) %in% c("Confidence", "OTU"))]
 OTU.UF = otu_table(OTUs, taxa_are_rows=F)
 tax.UF = tax_table(as.matrix(tax.clean))
-meta = read.table("metadata.txt", header=TRUE, row.names=1, sep="\t", dec = ".") #Sample names MUST be the same in both files, otherwise is going not going to pair data 
+meta = read.table("../Data/metadata.txt", header=TRUE, row.names=1, sep="\t", dec = ".") #Sample names MUST be the same in both files, otherwise is going not going to pair data 
 meta<-sample_data(meta)
-tree <- read_tree ("tree.nwk")
+tree <- read_tree ("../Data/tree.nwk")
 physeq = phyloseq(OTU.UF,tax.UF, meta, tree)
 sdf_phylo <- merge_phyloseq (OTU.UF,tax.UF, meta, tree)
 
