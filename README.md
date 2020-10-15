@@ -21,3 +21,5 @@ Aims:
 [Pathways-prediction](https://github.com/mariaasierra/Dental_Caries/tree/master/Pathways-prediction). Phylogenetic Investigation of Communities by Reconstruction of Unobserved States (PICRUSt).
 
 ## Publication
+
+Microbial population shift and metabolic characterization of silver diamine fluoride treatment failure on dental caries. Preprint BioRxiv, (2020). DOI: https://doi.org/10.1101/2020.10.02.20204784
